@@ -13,16 +13,14 @@ from osgeo import osr
 import csv
 from numpy import int16, float32, int32, float64
 
-
 point_dir="D:/oceanview/obs_points/"
-#dem_20k="E:/UH_work/other_data/dem_20k"
+#dem_20k="D:/UH_work/other_data/dem_20k"
 dem_20k="D:/oceanview/LiDAR_dem/dtm_20k"
-#output_dir="D:/viewshed4/"
+#output_dir="D:/UH_work/viewshed4/"
 output_dir="D:/oceanview/viewshed_dtm/"
-#origin_dem="D:/Oahu_DEM/dem_10m"
-origin_dem="D:/oceanview/LiDAR_dem/original_dem/dtm"
+#origin_dem="D:/UH_work/Oahu_DEM/dem_10m"
+origin_dem="D:/oceanview/LiDAR_dem/dtm"
 dist_dir="D:/oceanview/dist_obs_points/"
-
 
 def GetGeoInfo(FileName):
     SourceDS = gdal.Open(FileName, GA_ReadOnly)
@@ -67,7 +65,6 @@ dataset = gdal.Open(dem_20k, GA_ReadOnly)
 band = dataset.GetRasterBand(1)
 elv=(band.ReadAsArray()/float(1000))
 
-
 for fid in range(0,400):
     # Print x,y coordinates of each point feature
     #
@@ -95,7 +92,7 @@ for fid in range(0,400):
     #viewshed=(viewshed * weight).astype(int32)
     total_viewshed+=viewshed * weight
     
-    #NewFileName=CreateGeoTiff(output_dir+"w_view"+str(fid), total_viewshed, driver, NDV,xsize, ysize, GeoT, Projection, DataType)
+    NewFileName=CreateGeoTiff(output_dir+"w_view"+str(fid), total_viewshed, driver, NDV,xsize, ysize, GeoT, Projection, DataType)
 
     print "processing time for "+str(fid)+"th point is "+ str(time.time()-start_time)
 
