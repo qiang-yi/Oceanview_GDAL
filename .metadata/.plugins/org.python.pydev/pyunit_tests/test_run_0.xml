@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pydev-testrun version="1.0"?><pydev-testsuite>
+<summary errors="1" failures="0" finished="true" name="Test Run: 0" tests="0" total_time="null"/>
+<test location="C:/Users/yi/git/Oceanview/dist_obs_pts.py" status="error" test="dist_obs_pts" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "C:\Users\yi\.p2\pool\plugins\org.python.pydev_5.5.0.201701191708\pysrc\_pydev_runfiles\pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "C:\Users\yi\git\Oceanview\dist_obs_pts.py", line 39, in <module>
+    arcpy.CopyFeatures_management(shape, pt_file)
+  File "C:\Program Files (x86)\ArcGIS\Desktop10.5\ArcPy\arcpy\management.py", line 2586, in CopyFeatures
+    raise e
+ExecuteError: ERROR 000464: Cannot get exclusive schema lock.  Either being edited or in use by another application.
+Failed to execute (CopyFeatures).
+
+ERROR: Module: dist_obs_pts could not be imported (file: C:/Users/yi/git/Oceanview/dist_obs_pts.py).
+]]></stderr>
+</test>
+<launch mode="run">
+<launch_memento><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration local="true" path="Oceanview Oceanview"/>
+]]></launch_memento>
+</launch>
+</pydev-testsuite>
